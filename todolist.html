@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+        <title>TO do List</title>
+         <link rel="stylesheet" href="style.css">
+      
+    </head>
+
+ <body>
+    <input id="input">
+   <button onClick="add()">Add</button>
+    <ul id="list-container">
+    <li>Hello
+    <button onClick="deleteItem(event)">Delete</button>
+    </li>
+</ul>
+
+<script>
+
+    // select ul tag
+    var ul = document.getElementById("list-container")
+    var input = document.getElementById("input")
+
+    function add()
+    {
+
+        var listitem = document.createElement("li")
+        listitem.innerHTML = input.value + "<button onclick='deleteItem(event)'>Delete</button>"
+        ul.append(listitem)
+    }
+
+    function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+
+
+</script>
+</body>
+</html>
